@@ -1,0 +1,4 @@
+batch
+/subsystem=infinispan/cache-container=clustered/distributed-cache=KHAN_SESSION:add(mode=SYNC,start=EAGER)
+/subsystem=infinispan/cache-container=clustered/distributed-cache=KHAN_SESSION_LOGIN:add(mode=SYNC,start=EAGER)
+run-batch
