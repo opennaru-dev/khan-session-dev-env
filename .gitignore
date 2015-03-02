@@ -24,3 +24,14 @@ dist/
 out/
 src/
 target/
+
+# Archieve files
+*.zip
+*.tar
+
+# jq (json parse script)
+jp
+
+# Development environment folder/files
+containers_info/ 
+khan_session_dev
