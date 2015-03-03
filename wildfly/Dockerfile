@@ -1,4 +1,4 @@
-FROM ljhiyh/centos65
+FROM ljhiyh/centos65:dev
 
 # Maintainer
 # # ----------
