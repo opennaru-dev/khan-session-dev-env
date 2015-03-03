@@ -4,19 +4,19 @@ Build_All_Images(){
 echo "# All docker images building"
 echo "============================================================================"
 echo "Build infinispan Image"
-cd $HOME/infinispan
+cd $KHAN_HOME/infinispan
 ./docker-builder.sh
 
 echo "Build weblogic Image"
-cd $HOME/weblogic
+cd $KHAN_HOME/weblogic
 ./docker-builder.sh
 
 echo "Build wildfly Image"
-cd $HOME/wildfly
+cd $KHAN_HOME/wildfly
 ./docker-builder.sh
 
 echo $LINE_BLANK
-cd $HOME
+cd $KHAN_HOME
 echo "All Images are built up"
 docker images |grep ljhiyh/centos65
 }
@@ -31,18 +31,18 @@ else
    case $1 in
        infinispan)
          echo "infinispan image is building now"
-         cd $HOME/infinispan
+         cd $KHAN_HOME/infinispan
          `pwd`
          ./docker-builder.sh
          ;;
        weblogic)
          echo "weblogic image is building now"
-         cd $HOME/weblogic
+         cd $KHAN_HOME/weblogic
          ./docker-builder.sh
          ;;
        wildfly)
          echo "wildfly image is building now"
-         cd $HOME/wildfly
+         cd $KHAN_HOME/wildfly
          ./docker-builder.sh
          ;;
        all)

@@ -24,8 +24,8 @@ deleteBracket()
 # Create folder to store containers information
 echo "# Create folder to store containers information" 
 echo "============================================================================"
-if [ ! -d $HOME/containers_info ]; then
-   mkdir -p $HOME/containers_info
+if [ ! -d $KHAN_HOME/containers_info ]; then
+   mkdir -p $KHAN_HOME/containers_info
    echo "./containers_info folder is created"
 else 
    echo " ./containers_info folder is existed." 
@@ -36,11 +36,11 @@ echo $LINE_BLANK
 # Create a shared folder which will be used for deploying sample application
 echo "# Create a shared folder which will be used for deploying sample application"
 echo "============================================================================"
-if [ ! -d $HOME/khan_session_dev/applications ]; then
-   mkdir -p $HOME/khan_session_dev/applications
-   echo "$HOME/khan_session_dev/applications folder is created"
+if [ ! -d ~/khan_session_dev/applications ]; then
+   mkdir -p ~/khan_session_dev/applications
+   echo "~/khan_session_dev/applications folder is created"
 else 
-   echo "$HOME/khan_session_dev/applications folder is existed." 
+   echo "~/khan_session_dev/applications folder is existed." 
    echo "This folder will be used for shared application folder."
 fi
 echo $LINE_BLANK
@@ -53,7 +53,7 @@ echo $LINE_BLANK
 Processor=$(uname -p)
 echo "# Checking if jq file exist.."
 echo "============================================================================"
-if [ ! -f $HOME/jq ]; then
+if [ ! -f $KHAN_HOME/jq ]; then
    if [ $Processor == x86_64 ]; then
       echo "64bit"
       wget http://stedolan.github.io/jq/download/linux64/jq 
@@ -105,19 +105,19 @@ echo $LINE_BLANK
 echo "# Running docker containers"
 echo "============================================================================"
 echo "Run infinispan container"
-cd $HOME/infinispan
+cd $KHAN_HOME/infinispan
 ./docker-start.sh
 
 echo "Run weblogic container"
-cd $HOME/weblogic
+cd $KHAN_HOME/weblogic
 ./docker-start.sh
 
 echo "Run wildfly container"
-cd $HOME/wildfly
+cd $KHAN_HOME/wildfly
 ./docker-start.sh
 
 echo $LINE_BLANK
-cd $HOME
+cd $KHAN_HOME
 echo "waiting for start up docker containers"
 #sleep 3
 

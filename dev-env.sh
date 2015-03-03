@@ -1,3 +1,3 @@
-export HOME=$(pwd)
+export KHAN_HOME=$(pwd)
 export LINE_BLANK=" "
 

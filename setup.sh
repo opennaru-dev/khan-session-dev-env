@@ -66,7 +66,7 @@ then
   done 
   echo $LINE_BLANK
   echo ./docker-build.sh $DOCKER_IMAGE_NAME
-  ./docker-build.sh $DOCKER_IMAGE_NAME
+  ./docker-builder.sh $DOCKER_IMAGE_NAME
 else
   echo "Application folder path(~/khan_session_demo/applications):"
   ./dev-env-builder.sh
